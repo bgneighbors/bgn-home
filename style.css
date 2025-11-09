@@ -1,42 +1,28 @@
-:root {
-  --primary: #2c6e49;
-  --accent: #f4a261;
-}
+let previousNamespace = "home";
 
-body {
-  background: #faf9f6;
-}
-
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
-}
-
-main {
-  text-align: center;
-}
-
-.path-buttons {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-@media (min-width: 600px) {
-  .path-buttons {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-a[role="button"] {
-  padding: 1.2rem;
-  font-size: 1.1rem;
-}
-
-[data-barba="container"] {
-  will-change: transform, opacity;
-}
-
-html, body {
-  overflow-x: hidden;
-}
+barba.init({
+  transitions: [
+    {
+      name: 'slide-direction',
+      async leave(data) {
+        const isBack = data.next.namespace === "home" && previousNamespace !== "home";
+        await gsap.to(data.current.container, {
+          y: isBack ? 100 : -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      },
+      enter(data) {
+        const isBack = data.next.namespace === "home" && previousNamespace !== "home";
+        gsap.from(data.next.container, {
+          y: isBack ? -100 : 100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+        previousNamespace = data.next.namespace;
+      }
+    }
+  ]
+});
