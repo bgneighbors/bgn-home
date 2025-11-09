@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mutual Aid [Your City]</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Pico CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <h1>Mutual Aid [Your City]</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#resources">Resources</a>
-      <a href="#get-involved">Get Involved</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1>Mutual Aid [Your City]</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- ABOUT SECTION -->
     <section id="about">
       <h2>About Us</h2>
-      <p>We are a grassroots mutual aid and homeless outreach network...</p>
+      <p>We are a grassroots mutual aid and homeless outreach network working to support our community. Our mission is to share resources, volunteer, and connect people in need with help.</p>
     </section>
 
+    <!-- RESOURCES SECTION -->
     <section id="resources">
       <h2>Resources</h2>
-      <ul id="resource-list"></ul>
+      <ul id="resource-list">
+        <li><strong>Community Pantry</strong> — Food & essentials — <a href="#">Visit</a></li>
+        <li><strong>Street Outreach Team</strong> — Health & support — <a href="#">Visit</a></li>
+      </ul>
     </section>
 
+    <!-- GET INVOLVED SECTION -->
     <section id="get-involved">
       <h2>Get Involved</h2>
-      <p>Join our volunteer team, donate supplies, or share your skills!</p>
+      <p>Join our volunteer team, donate supplies, or share your skills. Every bit of help makes a difference!</p>
+      <p><a href="#contact" class="contrast">Volunteer / Donate</a></p>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: mutualaid@yourgroup.org</p>
+      <p>Email: <a href="mailto:mutualaid@yourgroup.org">mutualaid@yourgroup.org</a></p>
+      <p>Phone: (123) 456-7890</p>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Mutual Aid [Your City]</p>
+    <div class="container">
+      <p>© 2025 Mutual Aid [Your City]</p>
+    </div>
   </footer>
 
+  <!-- Optional JS -->
   <script src="script.js"></script>
 </body>
 </html>
