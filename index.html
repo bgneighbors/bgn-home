@@ -1,131 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BG Neighbors</title>
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <style>
-    :root {
-      --primary: #2c6e49;
-      --accent: #f4a261;
-    }
-
-    body {
-      background: #faf9f6;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-    }
-
-    h1 {
-      margin-bottom: 0.25em;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .path-buttons {
-      display: grid;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    @media (min-width: 600px) {
-      .path-buttons {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    a[role="button"] {
-      padding: 1.2rem;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    section {
-      padding: 5rem 1rem;
-    }
-
-    .back-top {
-      display: inline-block;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
+<div id="barba-wrapper">
+  <div class="barba-container">
     <h1>Welcome to BG Neighbors</h1>
-    <p>We connect neighbors in need with neighbors who care.</p>
-  </header>
+    <a href="about.html" role="button">Learn More</a>
+  </div>
+</div>
 
-  <!-- Main "Choose Your Path" Section -->
-  <main class="container">
-    <h2>What would you like to do today?</h2>
-
-    <div class="path-buttons">
-      <a href="#help" role="button" class="contrast">I need help</a>
-      <a href="#volunteer" role="button">I want to volunteer</a>
-      <a href="#donate" role="button" class="secondary">I want to donate</a>
-      <a href="#learn" role="button">Learn about BG Neighbors</a>
-    </div>
-  </main>
-
-  <!-- Path Sections -->
-  <section id="help">
-    <h3>Need Help?</h3>
-    <p>We’re here to support our community through food, clothing, and care. Here’s how to connect:</p>
-    <ul>
-      <li>Visit our pantry: <strong>123 Main St, Bowling Green</strong></li>
-      <li>Call us: <a href="tel:2705551234">(270) 555-1234</a></li>
-      <li>Come to our next community meal: <a href="#">See schedule</a></li>
-    </ul>
-    <a href="#" class="back-top">↑ Back to top</a>
-  </section>
-
-  <section id="volunteer">
-    <h3>Want to Volunteer?</h3>
-    <p>Join us in serving our neighbors. You can help with food distribution, street outreach, or events.</p>
-    <p><a href="#" role="button">Sign Up to Volunteer</a></p>
-    <a href="#" class="back-top">↑ Back to top</a>
-  </section>
-
-  <section id="donate">
-    <h3>Want to Donate?</h3>
-    <p>Your gift helps us feed families and meet urgent needs in Bowling Green.</p>
-    <p><a href="#" role="button" class="secondary">Give a Donation</a></p>
-    <a href="#" class="back-top">↑ Back to top</a>
-  </section>
-
-  <section id="learn">
-    <h3>Learn About BG Neighbors</h3>
-    <p>We’re a grassroots network of local people helping each other thrive. Learn about our mission, values, and programs.</p>
-    <p><a href="#" role="button">Read Our Story</a></p>
-    <a href="#" class="back-top">↑ Back to top</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 BG Neighbors • Bowling Green, KY</p>
-  </footer>
-
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/gsap@3"></script>
+<script>
+  barba.init({
+    transitions: [{
+      name: 'fade',
+      leave(data) {
+        return gsap.to(data.current.container, { opacity: 0 });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, { opacity: 0 });
+      }
+    }]
+  });
+</script>
 </body>
 </html>
