@@ -1,114 +1,42 @@
-/* ========== Custom Styles for Bowling Green Neighbors ========== */
+:root {
+  --primary: #2c6e49;
+  --accent: #f4a261;
+}
 
-/* Basic site‑wide customizations */
 body {
-  background: #f6f8fa;            /* light grey background for softer contrast */
-  color: #333333;                /* dark grey text for readability */
-  line-height: 1.6;
-  font-size: 1rem;
+  background: #faf9f6;
 }
 
-a {
-  color: #0066cc;                /* a friendly blue for links */
-  text-decoration: none;
-}
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-/* Header / navigation adjustments */
 header {
-  padding: 1.5rem 0;
   text-align: center;
-  background: #0055a5;          /* a stronger blue for header background */
-  color: #ffffff;
-}
-header a {
-  color: #ffffff;
-}
-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.75rem 0 0;
-}
-header nav li {
-  display: inline-block;
-  margin: 0 1rem;
-}
-header nav li a {
-  font-weight: 600;
+  padding: 3rem 1rem 2rem;
 }
 
-/* Main section titles */
-h2 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.75rem;
-  border-bottom: 2px solid #e2e2e2;
-  padding-bottom: 0.5rem;
-}
-
-/* Content container to limit width for readability */
 main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* Button styling (for “Volunteer / Donate” etc) */
-.button, .btn {
-  display: inline-block;
-  background: #008744;            /* a green for action buttons */
-  color: white !important;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
   text-align: center;
 }
-.button:hover, .btn:hover {
-  background: #006c32;
+
+.path-buttons {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-/* Resource list styling */
-ul.resource-list {
-  padding-left: 1.5rem;
-}
-ul.resource-list li {
-  margin-bottom: 0.75rem;
-}
-ul.resource-list li a {
-  font-weight: 500;
-}
-
-/* Footer tweaks */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666666;
-  padding: 2rem 0;
-}
-footer small {
-  display: block;
-  margin-top: 0.5rem;
-}
-
-/* Responsive tweaks for mobile */
-@media (max-width: 600px) {
-  header nav li {
-    display: block;
-    margin: 0.5rem 0;
-  }
-  
-  main {
-    padding: 1.5rem 1rem;
-  }
-  
-  .button, .btn {
-    width: 100%;
-    padding: 0.9rem;
+@media (min-width: 600px) {
+  .path-buttons {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
+a[role="button"] {
+  padding: 1.2rem;
+  font-size: 1.1rem;
+}
+
+[data-barba="container"] {
+  will-change: transform, opacity;
+}
+
+html, body {
+  overflow-x: hidden;
+}
