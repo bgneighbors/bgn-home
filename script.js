@@ -1,1 +1,29 @@
+let previousNamespace = "home";
+
+barba.init({
+  transitions: [
+    {
+      name: 'slide-direction',
+      async leave(data) {
+        const isBack = data.next.namespace === "home" && previousNamespace !== "home";
+        await gsap.to(data.current.container, {
+          y: isBack ? 100 : -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      },
+      enter(data) {
+        const isBack = data.next.namespace === "home" && previousNamespace !== "home";
+        gsap.from(data.next.container, {
+          y: isBack ? -100 : 100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+        previousNamespace = data.next.namespace;
+      }
+    }
+  ]
+});
 
