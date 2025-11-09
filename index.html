@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BG Neighbors</title>
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div id="barba-wrapper">
-  <div class="barba-container">
-    <h1>Welcome to BG Neighbors</h1>
-    <a href="about.html" role="button">Learn More</a>
-  </div>
-</div>
+<body data-barba="wrapper">
 
-<script src="https://unpkg.com/@barba/core"></script>
-<script src="https://unpkg.com/gsap@3"></script>
-<script>
-  barba.init({
-    transitions: [{
-      name: 'fade',
-      leave(data) {
-        return gsap.to(data.current.container, { opacity: 0 });
-      },
-      enter(data) {
-        return gsap.from(data.next.container, { opacity: 0 });
-      }
-    }]
-  });
-</script>
+  <header class="container">
+    <h1>Welcome to BG Neighbors</h1>
+    <p>We connect neighbors in need with neighbors who care.</p>
+  </header>
+
+  <main class="container" data-barba="container" data-barba-namespace="home">
+    <h2>What would you like to do today?</h2>
+    <div class="path-buttons">
+      <a href="help.html" role="button" class="contrast">I need help</a>
+      <a href="volunteer.html" role="button">I want to volunteer</a>
+      <a href="donate.html" role="button" class="secondary">I want to donate</a>
+      <a href="learn.html" role="button">Learn about BG Neighbors</a>
+    </div>
+  </main>
+
+  <footer class="container">
+    <p>© 2025 BG Neighbors • Bowling Green, KY</p>
+  </footer>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="script.js"></script>
 </body>
 </html>
