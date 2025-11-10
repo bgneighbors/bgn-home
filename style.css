@@ -1,16 +1,16 @@
 :root {
-  --primary: #5762b2;
-  --accent: #7a57b2;
+  --primary: #1a5261;
+  --accent: #53b48f;
 }
 
 body {
-  background: #578fb2;
+  background: var(--primary);
 }
 
 header {
   text-align: center;
   padding: 3rem 1rem 2rem;
-  background-color: var(--primary);
+  background: #8ecdb5;
 }
 
 main {
@@ -36,6 +36,13 @@ a[role="button"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+a[role="button"]:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
 }
 
 [data-barba="container"] {
@@ -44,4 +51,25 @@ a[role="button"] {
 
 html, body {
   overflow-x: hidden;
+}
+
+.logo {
+  display: block;
+  max-width: 500px;   /* adjust to your preferred size */
+  margin: 2rem auto;  /* centers it horizontally */
+}
+
+@media (max-width: 600px) {
+  .logo {
+    max-width: 180px;
+  }
+}
+
+.logo {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
