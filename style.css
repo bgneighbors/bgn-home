@@ -45,10 +45,6 @@ a[role="button"]:hover {
   border-color: #6ec9a0;
 }
 
-[data-barba="container"] {
-  will-change: transform, opacity;
-}
-
 html, body {
   overflow-x: hidden;
 }
