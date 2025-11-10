@@ -55,7 +55,7 @@ html, body {
 
 .logo {
   display: block;
-  max-width: 500px;   /* adjust to your preferred size */
+  max-width: 400px;   /* adjust to your preferred size */
   margin: 2rem auto;  /* centers it horizontally */
 }
 
