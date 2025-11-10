@@ -73,3 +73,19 @@ html, body {
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-home {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #8ecdb5;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
