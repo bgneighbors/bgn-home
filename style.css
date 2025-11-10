@@ -9,7 +9,7 @@ body {
 
 header {
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 1rem 1rem 0.5rem;
   background: #8ecdb5;
 }
 
@@ -20,7 +20,7 @@ main {
 .path-buttons {
   display: grid;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 600px) {
