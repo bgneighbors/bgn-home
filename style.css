@@ -100,3 +100,35 @@ html, body {
 .back-home:hover {
   text-decoration: underline;
 }
+
+.box-row {
+  display: flex;
+  gap: 20px;           /* space between boxes */
+  margin: 20px 0;
+}
+
+.info-box {
+  flex: 1;              /* all boxes equal width */
+  border: 2px solid #333;  /* outline color */
+  padding: 20px;
+  border-radius: 10px;  /* optional rounded corners */
+  background: #fafafa;  /* light background, optional */
+}
+
+.info-box h3 {
+  margin-top: 0;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-box:hover {
+  border-color: #0077ff;
+  background: #ffffff;
+}
+
+.info-box, .info-box * {
+  color: #1a5261 !important;
+}
