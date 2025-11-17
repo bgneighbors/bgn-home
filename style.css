@@ -10,7 +10,7 @@ body {
 header {
   text-align: center;
   padding: 1rem 1rem 0.5rem;
-  background: #8ecdb5;
+  background: #c7ffea;
 }
 
 main {
@@ -72,6 +72,12 @@ html, body {
   display: block;  /* removes weird inline spacing */
   margin: 0 auto;  /* centers it */
   max-width: none; /* overrides Pico's responsive image limit */
+}
+
+.sheet-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #ddd;
 }
 
 
