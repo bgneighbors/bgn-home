@@ -113,6 +113,8 @@ html, body {
   padding: 20px;
   border-radius: 10px;  /* optional rounded corners */
   background: #fafafa;  /* light background, optional */
+  margin: 1rem 0;
+  box sizing: border-box;
 }
 
 .info-box h3 {
@@ -132,3 +134,36 @@ html, body {
 .info-box, .info-box * {
   color: #1a5261 !important;
 }
+
+@media (max-width: 600px) {
+  .info-box {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  body {
+    padding: 0 1rem;
+  }
+}
+
+.info-row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .info-row {
+    flex-direction: column;
+  }
+}
+
+header img.logo {
+  max-width: 220px;
+}
+
+@media (max-width: 600px) {
+  header img.logo {
+    max-width: 150px;
+  }
+}
+
