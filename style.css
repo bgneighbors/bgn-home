@@ -103,8 +103,15 @@ html, body {
 
 .box-row {
   display: flex;
-  gap: 20px;           /* space between boxes */
+  gap: 20px;
   margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .box-row {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .info-box {
